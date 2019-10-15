@@ -1,4 +1,4 @@
-@Library('msbuild@version') _
+@Library('msbuild@master') _
 
 pipeline{
     agent any
