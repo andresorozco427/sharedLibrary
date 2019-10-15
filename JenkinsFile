@@ -23,19 +23,4 @@ pipeline {
            }
        }
    }
-
-	   post {
-	         always {
-	             echo 'This will always run'
-	         }
-	         success {
-	             echo 'This will run only if successful'
-	         }
-		     failure {
-	 		echo 'This will run only if failed'
-	 		mail (to: 'andres.orozco@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",
-	 		body: "Something is wrongwith ${env.BUILD_URL}")
-	 		}
-		 }
-
   }
