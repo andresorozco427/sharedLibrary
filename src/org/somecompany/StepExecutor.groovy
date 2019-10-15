@@ -9,8 +9,8 @@ class StepExecutor implements IStepExecutor{
     }
 
     @Override
-    int sh(String command) {
-        this._steps.sh returnStatus: true, script: "${command}"
+    int bat(String command) {
+        this._steps.bat returnStatus: true, script: "${command}"
     }
 
     @Override

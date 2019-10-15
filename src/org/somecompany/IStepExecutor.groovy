@@ -1,6 +1,6 @@
 package org.somecompany
 
 interface IStepExecutor {
-    int sh(String command)
+    int bat(String command)
     void error(String message)
 }

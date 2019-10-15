@@ -34,7 +34,7 @@ public class MsBuildTest {
         build.build();
 
         //Assert
-        verify(_steps).sh(anyString());
+        verify(_steps).bat(anyString());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class MsBuildTest {
         String solutionPath = "some/path/to.sln";
         MsBuild build = new MsBuild(solutionPath);
 
-        when(_steps.sh(anyString())).thenReturn(-1);
+        when(_steps.bat(anyString())).thenReturn(-1);
 
         //Act
         build.build();

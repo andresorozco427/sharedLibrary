@@ -13,7 +13,7 @@ class MsBuild implements  Serializable{
     void build(){
         IStepExecutor steps = ContextRegistry.getContext().getStepExecutor()
 
-        int returnStatus = steps.sh("echo \"building ${this._solutionPath}...\"")
+        int returnStatus = steps.bat("echo \"building ${this._solutionPath}...\"")
         if(returnStatus != 0){
             steps.error("Some error")
         }
