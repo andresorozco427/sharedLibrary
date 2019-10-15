@@ -1,7 +1,7 @@
-@Library(msbuild@master)_
+@Library(msbuild@version)_
 
 node{
-    agent 'any'
+    agent any
 
     options{
          buildDiscarder(logRotator(numToKeepStr: '3')
