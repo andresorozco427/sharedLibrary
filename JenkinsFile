@@ -1,19 +1,41 @@
 @Library('msbuild@master') _
-
 pipeline {
-    agent any
+   agent any
 
-    stages {
-        stage('build'){
-            steps {
+   options {
+       buildDiscarder(logRotator(numToKeepStr: '3'))
+       disableConcurrentBuilds()
+   }
+
+    stages{
+       stage('build') {
+           steps{
+             script {
                 ex_msbuild 'test'
-            }
-        }
+             }
+           }
+       }
+       stage('Build dataBase') {
+           steps {
+              script {
+                ex_msbuild.buildDatabase 'ANDRES'
+              }
+           }
+       }
+   }
 
-        stage('build dataBase'){
-            steps {
-                ex_msbuild.buildDatabase 'ANDRES-OROZCO'
-            }
-        }
-    }
-}
+	   post {
+	         always {
+	             echo 'This will always run'
+	         }
+	         success {
+	             echo 'This will run only if successful'
+	         }
+		     failure {
+	 		echo 'This will run only if failed'
+	 		mail (to: 'andres.orozco@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",
+	 		body: "Something is wrongwith ${env.BUILD_URL}")
+	 		}
+		 }
+
+  }
