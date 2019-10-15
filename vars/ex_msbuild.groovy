@@ -5,5 +5,12 @@ def call(String solutionPath){
     ContextRegistry.registerDEfaultContext(this)
 
     def msbuild = new MsBuild(solutionPath)
-    msbuild.build();
+    msbuild.build()
+}
+
+def buildDatabase(String serverName){
+    ContextRegistry.registerDEfaultContext(this)
+
+    def msbuild = new MsBuild(serverName)
+    msbuild.buildDatabase()
 }
