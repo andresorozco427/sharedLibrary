@@ -2,6 +2,10 @@
 pipeline {
    agent any
 
+    parameters {
+       string(name: 'SERVER_NAME', defaultValue: '', description: '')
+    }
+
    options {
        buildDiscarder(logRotator(numToKeepStr: '3'))
        disableConcurrentBuilds()
@@ -18,7 +22,7 @@ pipeline {
        stage('Build dataBase') {
            steps {
               script {
-                ex_msbuild.buildDatabase 'ANDRES'
+                ex_msbuild.buildDatabase "${params.SERVER_NAME}"
               }
            }
        }
