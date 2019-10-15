@@ -1,4 +1,4 @@
-@Library(shared_library@master)_
+@Library(msbuild@master)_
 
 node{
     agent 'any'
