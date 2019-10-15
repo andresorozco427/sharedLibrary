@@ -1,0 +1,14 @@
+@Library(shared_library@master)_
+
+node{
+    agent 'any'
+
+    options{
+         buildDiscarder(logRotator(numToKeepStr: '3')
+        disableConcurrentBuilds()
+    }
+
+    stage 'msBuild'
+
+    ex_msbuild 'test'
+}

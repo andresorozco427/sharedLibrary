@@ -1,0 +1,35 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+group 'jenkinsShared'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    testImplementation 'junit:junit:4.12'
+    testCompile "org.mockito:mockito-core:2.+"
+}
+
+sourceSets{
+    main{
+        java {
+            srcDirs = []
+        }
+        groovy{
+            srcDirs = ['src', 'vars']
+        }
+    }
+    test{
+        java{
+            srcDir 'test'
+        }
+    }
+}
