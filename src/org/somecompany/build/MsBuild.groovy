@@ -4,10 +4,10 @@ import org.somecompany.IStepExecutor
 import org.somecompany.ioc.ContextRegistry
 
 class MsBuild implements  Serializable{
+    private static IStepExecutor steps = ContextRegistry.getContext().getStepExecutor()
 
     void build(String solutionPath){
-        IStepExecutor steps = ContextRegistry.getContext().getStepExecutor()
-
+        steps
         int returnStatus = steps.bat("echo \"building ${solutionPath}...\"")
         if(returnStatus != 0){
             steps.error("Some error")
@@ -15,8 +15,18 @@ class MsBuild implements  Serializable{
     }
 
    void buildDatabase(String serverName){
-       IStepExecutor steps = ContextRegistry.getContext().getStepExecutor();
+       steps
+       int returnStatus = steps.bat("sqlcmd \" -S ${serverName} -E \"")
+       if(returnStatus != 0){
+           steps.error("Some error")
+       }
+   }
 
-       steps.bat("sqlcmd \" -S ${serverName} -E -i C:/Users/andres.orozco/Desktop/returnvalue -o out.log \"")
-          }
+void buildQueryDataBase(String DatabaseName){
+        steps
+        int returnStatus = steps.bat("CREATE DATABASE ${DatabaseName}")
+        if(returnStatus != 0){
+            steps.error("Some error")
+        }
+    }
 }

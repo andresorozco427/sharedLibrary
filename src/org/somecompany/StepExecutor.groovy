@@ -10,9 +10,7 @@ class StepExecutor implements IStepExecutor{
 
     @Override
     int bat(String command) {
-        println "inicio bat en StepExecutor"
         this._steps.bat returnStatus: true, script: "${command}"
-        println "final bat en StepExecutor"
     }
 
     @Override

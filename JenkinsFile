@@ -3,7 +3,8 @@ pipeline {
    agent any
 
     parameters {
-       string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+       string(name: 'SERVER_NAME', defaultValue: 'ANDRES-OROZCO', description: 'Nombre del servidor de sql server')
+       string(name: 'DATABASE', defaultValue: 'Employees', description: 'Nombre de la base de datos')
     }
 
    options {
@@ -25,6 +26,14 @@ pipeline {
                 ex_msbuild.buildDatabase "${params.SERVER_NAME}"
               }
            }
+       }
+
+       stage('Build Query Database'){
+            steps {
+                script {
+                    ex_msbuild.buildQueryDatabaseCreate "${params.DATABASE}"
+                }
+            }
        }
    }
   }
