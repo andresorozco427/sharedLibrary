@@ -5,7 +5,9 @@ pipeline{
     stages{
         stage('build'){
             steps{
-                ex_msbuild 'some/path/to.sln'
+                script{
+                    ex_msbuild 'some/path/to.sln'
+                }
             }
         }
     }
