@@ -9,7 +9,5 @@ node{
        stage 'build'
               ex_msbuild 'test'
        stage 'buildDatabase'
-         ex_msbuild.buildDatabase(
-             "${params.SERVER_NAME}"
-         )
+         ex_msbuild.buildDatabase 'ANDRES-OROZCO'
 }

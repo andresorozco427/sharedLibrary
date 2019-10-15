@@ -3,9 +3,8 @@ import org.somecompany.ioc.ContextRegistry
 
 def call(String solutionPath){
     ContextRegistry.registerDEfaultContext(solutionPath)
-
-    def msbuild = new MsBuild(solutionPath)
-    msbuild.build()
+    def msbuild = new MsBuild()
+    msbuild.build(solutionPath)
 }
 
 def buildDatabase(String serverName){
