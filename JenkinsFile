@@ -1,14 +1,12 @@
 @Library('msbuild@version') _
 
-node{
+pipeline{
     agent any
-
-    options{
-         buildDiscarder(logRotator(numToKeepStr: '3'))
-        disableConcurrentBuilds()
+    stages{
+        stage('build'){
+            steps{
+                ex_msbuild 'some/path/to.sln'
+            }
+        }
     }
-
-    stage 'msBuild'
-
-    ex_msbuild 'test'
 }
