@@ -5,11 +5,13 @@ import org.somecompany.ioc.ContextRegistry
 
 class MsBuild implements  Serializable{
     private String _solutionPath
-    private String _server
 
-    MsBuild(String _solutionPath, String _server) {
+    MsBuild(){
+
+    }
+
+    MsBuild(String _solutionPath) {
         this._solutionPath = _solutionPath
-        this._server = _server
     }
 
     void build(){
@@ -21,10 +23,10 @@ class MsBuild implements  Serializable{
         }
     }
 
-   void buildDatabase(){
+   void buildDatabase(String serverName){
        IStepExecutor steps = ContextRegistry.getContext().getStepExecutor();
 
-       int returnStatus = steps.bat("sqlcmd \" -S ${this._server} -E -i C:/Users/andres.orozco/Desktop/returnvalue -o out.log \"")
+       int returnStatus = steps.bat("sqlcmd \" -S ${serverName} -E -i C:/Users/andres.orozco/Desktop/returnvalue -o out.log \"")
        if(returnStatus != 0){
            steps.error("Some error")
        }
