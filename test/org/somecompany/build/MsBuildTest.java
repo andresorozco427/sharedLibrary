@@ -30,7 +30,7 @@ public class MsBuildTest {
         //Arrange
         String solutionPath = "some/path/to.sln";
         String severname = "ANDRES-OROZCO";
-        MsBuild build = new MsBuild(solutionPath, severname);
+        MsBuild build = new MsBuild(solutionPath);
         //Act
         build.build();
 
@@ -43,7 +43,7 @@ public class MsBuildTest {
         //Arrange
         String solutionPath = "some/path/to.sln";
         String severname = "ANDRES-OROZCO";
-        MsBuild build = new MsBuild(solutionPath, severname);
+        MsBuild build = new MsBuild(solutionPath);
 
         when(_steps.bat(anyString())).thenReturn(-1);
 
