@@ -1,4 +1,4 @@
-@Library(msbuild@version)_
+@Library('msbuild@version') _
 
 node{
     agent any
