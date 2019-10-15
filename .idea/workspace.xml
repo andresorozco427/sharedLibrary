@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dc7bfb7c-ebdf-4367-afd4-5d5bafae0c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/somecompany/build/MsBuild.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/somecompany/build/MsBuild.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vars/ex_msbuild.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/vars/ex_msbuild.groovy" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

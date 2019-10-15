@@ -1,13 +1,19 @@
 @Library('msbuild@master') _
 
-node{
-       agent any
-        parameters {
-            string(name: 'SERVER_NAME', defaultValue: 'ANDRES-OROZCO\\MSQLSERVER', description: '')
+pipeline {
+    agent any
+
+    stages {
+        stage('build'){
+            steps {
+                ex_msbuild 'test'
+            }
         }
 
-       stage 'build'
-              ex_msbuild 'test'
-       stage 'buildDatabase'
-         ex_msbuild.buildDatabase 'ANDRES-OROZCO'
+        stage('build dataBase'){
+            steps {
+                ex_msbuild.buildDatabase 'ANDRES-OROZCO'
+            }
+        }
+    }
 }
