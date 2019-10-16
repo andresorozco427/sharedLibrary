@@ -17,10 +17,7 @@ class MsBuild implements  Serializable{
    void buildDatabase(String serverName){
        IStepExecutor steps = ContextRegistry.getContext().getStepExecutor();
 
-       int returnStatus =  steps.bat("sqlcmd -S ${serverName} -E -i C:\\Users\\andres.orozco\\Desktop\\returnvalue.sql -o C:\\Users\\andres.orozco" +
+       steps.bat("sqlcmd -S ${serverName} -E -i C:\\Users\\andres.orozco\\Desktop\\returnvalue.sql -o C:\\Users\\andres.orozco" +
                "\\Desktop\\return.sql")
-       if(returnStatus != 0){
-           steps.error("Some error")
-       }
    }
 }
