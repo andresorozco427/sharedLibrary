@@ -13,9 +13,3 @@ def buildDatabase(String serverName){
     def msbuild = new MsBuild()
     msbuild.buildDatabase(serverName)
 }
-
-def buildQueryDatabaseCreate(String nameDatabase){
-    ContextRegistry.registerDEfaultContext(this)
-    def msbuild = new MsBuild()
-    msbuild.buildQueryDataBase(nameDatabase)
-}

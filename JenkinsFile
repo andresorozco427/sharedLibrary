@@ -27,13 +27,5 @@ pipeline {
               }
            }
        }
-
-       stage('Build Query Database'){
-            steps {
-                script {
-                    ex_msbuild.buildQueryDatabaseCreate "${params.DATABASE}"
-                }
-            }
-       }
    }
   }
