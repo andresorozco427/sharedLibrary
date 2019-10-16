@@ -4,8 +4,6 @@ import groovy.json.JsonSlurper
 import org.somecompany.IStepExecutor
 import org.somecompany.ioc.ContextRegistry
 
-import java.lang.module.Configuration
-
 class MsBuild implements  Serializable{
 
     void build(String solutionPath){
