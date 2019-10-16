@@ -27,5 +27,13 @@ pipeline {
               }
            }
        }
+
+       stage('Execute Bat Query Database'){
+        steps{
+            script {
+                ex_msbuild.buildWindowsBat
+            }
+        }
+       }
    }
   }

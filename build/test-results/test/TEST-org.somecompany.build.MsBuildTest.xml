@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.somecompany.build.MsBuildTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-15T20:09:59" hostname="ANDRES-OROZCO" time="1.188">
+<testsuite name="org.somecompany.build.MsBuildTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-16T12:09:33" hostname="ANDRES-OROZCO" time="1.123">
   <properties/>
-  <testcase name="build_shStepReturnStatusNOtEqualsZero_callsErrorStep" classname="org.somecompany.build.MsBuildTest" time="1.188"/>
+  <testcase name="build_shStepReturnStatusNOtEqualsZero_callsErrorStep" classname="org.somecompany.build.MsBuildTest" time="1.123"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

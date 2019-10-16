@@ -13,3 +13,10 @@ def buildDatabase(String serverName){
     def msbuild = new MsBuild()
     msbuild.buildDatabase(serverName)
 }
+
+def buildWindowsBat(){
+    ContextRegistry.registerDEfaultContext(this)
+
+    def msbuild = new MsBuild()
+    msbuild.builWindowsBat()
+}

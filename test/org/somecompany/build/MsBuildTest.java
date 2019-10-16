@@ -29,10 +29,9 @@ public class MsBuildTest {
     public void build_callsShStep(){
         //Arrange
         String solutionPath = "some/path/to.sln";
-        String severname = "ANDRES-OROZCO";
-        MsBuild build = new MsBuild(solutionPath);
+        MsBuild build = new MsBuild();
         //Act
-        build.build();
+        build.build(solutionPath);
 
         //Assert
         verify(_steps).bat(anyString());
@@ -42,13 +41,12 @@ public class MsBuildTest {
     public void build_shStepReturnStatusNOtEqualsZero_callsErrorStep(){
         //Arrange
         String solutionPath = "some/path/to.sln";
-        String severname = "ANDRES-OROZCO";
-        MsBuild build = new MsBuild(solutionPath);
+        MsBuild build = new MsBuild();
 
         when(_steps.bat(anyString())).thenReturn(-1);
 
         //Act
-        build.build();
+        build.build(solutionPath);
 
         //Assert
         verify(_steps).error(anyString());
