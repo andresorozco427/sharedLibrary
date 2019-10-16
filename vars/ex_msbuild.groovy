@@ -11,5 +11,5 @@ def buildDatabase(String serverName){
     ContextRegistry.registerDEfaultContext(this)
 
     def msbuild = new MsBuild()
-    msbuild.buildDatabase(serverName)
+    msbuild.buildEntryFileDatabase(serverName)
 }
