@@ -18,5 +18,5 @@ def buildWindowsBat(){
     ContextRegistry.registerDEfaultContext(this)
 
     def msbuild = new MsBuild()
-    msbuild.builWindowsBat()
+    msbuild.buildWindowsBat()
 }
