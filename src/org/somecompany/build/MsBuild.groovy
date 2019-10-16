@@ -32,7 +32,7 @@ class MsBuild implements  Serializable{
             }
         }
 
-    void builWindowsBat(){
+    void buildWindowsBat(){
         IStepExecutor steps = ContextRegistry.getContext().getStepExecutor()
 
         int returnStatus = steps.bat("C:\\Users\\andres.orozco\\Desktop\\windowsscript.bat")
