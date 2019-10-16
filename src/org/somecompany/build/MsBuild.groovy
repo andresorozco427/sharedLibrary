@@ -31,13 +31,4 @@ class MsBuild implements  Serializable{
                 steps.error("Archivo ya existente")
             }
         }
-
-    void buildWindowsBat(){
-        IStepExecutor steps = ContextRegistry.getContext().getStepExecutor()
-
-        int returnStatus = steps.bat("C:\\Users\\andres.orozco\\Desktop\\windowsscript.bat")
-        if(returnStatus != 0){
-            steps.error("Some error")
-        }
-    }
 }

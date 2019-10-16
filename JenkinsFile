@@ -29,11 +29,11 @@ pipeline {
        }
 
        stage('Execute Bat Query Database'){
-        steps{
-            script {
-                ex_msbuild.buildWindowsBat
+            steps{
+                echo "..............Execute File Bat.................."
+                bat 'cd \"C:/Users/andres.orozco/Desktop\"'
+                bat 'windowsscript.bat'
             }
-        }
        }
    }
   }
